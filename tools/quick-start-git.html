@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>稻草人&#39;S BLOG</title>
+  <title>Git 常用命令 | 稻草人&#39;S BLOG</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -228,17 +228,12 @@
         <!-- // End height spacing helper -->
 
         <!-- ============================ END Hero Image =========================== -->
-      <!-- ============================ Content =========================== -->
-
+      
 <section id="intro">
     <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/tools/quick-start-git.html">Git 常用命令</a></h3>
-                    <span>
-                        <span class="post-meta">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
       <time datetime="2016-04-20T02:26:27.000Z" itemprop="datePublished">
           2016-04-20
       </time>
@@ -251,106 +246,64 @@
     
     
 </span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        快速开始创建本地仓库创建本地仓库(repository)，将会在文件夹下创建一个 .git 文件夹，.git 文件夹里存储了所有的版本信息、标记等内容git init here
-把本地仓库和远程仓库关联起来。如果不执行这个命令的话，每次 push 的时候都需要指定远程服务器的地址git remote add origin git@github.com:winter1991/helloworld.git        
-本地仓库增加删除从
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/tools/quick-start-git.html">阅读全文...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
+                <h1>Git 常用命令</h1>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/archives/hello-world.html">Hello World</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-04-20T01:09:19.817Z" itemprop="datePublished">
-          2016-04-20
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/archives/hello-world.html">阅读全文...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建本地仓库"><a href="#创建本地仓库" class="headerlink" title="创建本地仓库"></a>创建本地仓库</h3><p>创建本地仓库(repository)，将会在文件夹下创建一个 .git 文件夹，.git 文件夹里存储了所有的版本信息、标记等内容<br>git init here</p>
+<p>把本地仓库和远程仓库关联起来。如果不执行这个命令的话，每次 push 的时候都需要指定远程服务器的地址<br>git remote add origin git@github.com:winter1991/helloworld.git        </p>
+<h3 id="本地仓库增加删除"><a href="#本地仓库增加删除" class="headerlink" title="本地仓库增加删除"></a>本地仓库增加删除</h3><p>从本地仓库增删，结果将会保存到本机的缓存里面<br>git add<br>git rm</p>
+<h3 id="提交本地库"><a href="#提交本地库" class="headerlink" title="提交本地库"></a>提交本地库</h3><p>提交，把本机缓存中的内容提交到本机的 HEAD 里面<br>git commit -m “注释”      </p>
+<h3 id="提交远程服务器"><a href="#提交远程服务器" class="headerlink" title="提交远程服务器"></a>提交远程服务器</h3><p>把本地的 commit(提交) push 到远程服务器上， origin 也就是之前 git remote add origin 那个命令里面的 origin，origin 替代了服务器仓库地址：git push git@github.com:winter1991/helloworld.git master<br>git push origin master</p>
+<p>从远程服务器 pull 新的改动<br>git pull origin master</p>
+<p>查看状态<br>git status</p>
+<p>提交全部修改<br>git add -A</p>
+<h2 id="Git-配置"><a href="#Git-配置" class="headerlink" title="Git 配置"></a>Git 配置</h2><p>git config –global user.name “xxx”      – 配置用户名，上传本地 repository 到服务器上的时候，在 Github 上会显示这里配置的上传者信息<br>git config –global user.email “xxx”     – 配置邮箱<br>git config –list        查看配置列表</p>
+<p>配置 sshkey ： 上传代码时使用这个 sshkey 来确认是否有上传权限</p>
+<pre><code>1. 创建本地 ssh ： ssh-keygen -t rsa -C &quot;Github 的注册邮箱&quot;
+2. 在 Github 中添加这个 sshkey ： 
+    复制  C:\Documents and Settings\Administrator\.ssh\id_rsa.pub 文件中的内容；
+    登录 Github --&gt; Account Setting  --&gt; SSH-KEY --&gt; Add SSH-KEY --&gt; 粘贴id_rsa.pub中的内容；
+3. 验证： ssh -T git@github.com
+    出现 Hi xxx! You&apos;ve successfully authenticated, but GitHub does not provide shell access. 说明配置成功，可以连接上 Github
+</code></pre><h2 id="建立仓库-repository-："><a href="#建立仓库-repository-：" class="headerlink" title="建立仓库 repository ："></a>建立仓库 repository ：</h2><p>git init here       – 创建本地仓库<br>git remote add origin git@github.com:用户名/仓库名.git<br>                    – 把本地仓库和远程仓库关联起来， 如果不执行这个命令的话，每次 push 的时候都需要指定远程服务器的地址</p>
+<h2 id="从远程仓库中下载新的改动："><a href="#从远程仓库中下载新的改动：" class="headerlink" title="从远程仓库中下载新的改动："></a>从远程仓库中下载新的改动：</h2><p>git pull origin master</p>
+<h2 id="提交本地修改到远程仓库中："><a href="#提交本地修改到远程仓库中：" class="headerlink" title="提交本地修改到远程仓库中："></a>提交本地修改到远程仓库中：</h2><p>git add<br>git add -A      – 将改动添加到本地仓库中<br>git rm xxx      – 从本地仓库中删除指定文件<br>git rm -r xxx   – 从本地仓库中删除指定文件夹</p>
+<p>git commit -m “注释”    – 把本机缓存中的内容提交到本机的 HEAD 里面</p>
+<p>git push origin master      – 把本地的 commit push 到远程仓库中</p>
+<h2 id="使用-gitignore-文件忽略指定的内容："><a href="#使用-gitignore-文件忽略指定的内容：" class="headerlink" title="使用 .gitignore 文件忽略指定的内容："></a>使用 .gitignore 文件忽略指定的内容：</h2><pre><code>1. 在本地仓库根目录创建 .gitignore 文件。Win7 下不能直接创建，可以创建 &quot;.gitignore.&quot; 文件，后面的标点自动被忽略；
+2. 过滤文件和文件夹： [Tt]emp/ 过滤 Temp\temp 文件夹； *.suo 过滤 .suo 文件；
+3. 不过滤文件和文件夹： !*.c
+</code></pre>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/archives/hexo.html">hexo</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2016-04-13T06:25:44.000Z" itemprop="datePublished">
-          2016-04-13
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        官网中文文档
-Hexo搭建博客教程
-zipperary的hexo系列教程
-Theme
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/archives/hexo.html">阅读全文...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
         <nav class="pagination" role="pagination">
-          
-          
-        </nav>
+    
+    
+    <a class="pull-right" href="/archives/hello-world.html">
+        Hello World →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="tools/quick-start-git.html" data-title="Git 常用命令" data-url="http://webplus.github.io/tools/quick-start-git.html"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p></p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
+
 
       
 <!-- ============================ Footer =========================== -->
