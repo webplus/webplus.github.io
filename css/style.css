@@ -141,7 +141,7 @@ a:active,
 a:focus,
 a:visited,
 a:link {
-	color: #DDDDDD;
+	color: #151515;
 	text-decoration: none;
 }
 [class*="col-"] {
@@ -3321,7 +3321,7 @@ footer .footer_bottom {
 	max-width: 100%;
 }
 #intro .col-md-8.col-md-offset-2 a {
-  color: #0275d8;
+  color: #151515;
 }
 #intro .col-md-8.col-md-offset-2 a:hover {
   color: #2C4A77;
